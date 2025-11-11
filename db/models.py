@@ -8,9 +8,10 @@ except Exception:
 
 
 # Sample User model
-class User(models.Model):
-    name = models.CharField(max_length=50, default="Dan")
+class Product(models.Model):
+    upc = models.CharField(max_length = 4)
+    name = models.CharField(max_length = 50)
+    price = models.DecimalField(max_digits = 4, decimal_places = 2)
 
     def __str__(self):
-        return self.name
-
+        return (self.name + " " + self.price)
